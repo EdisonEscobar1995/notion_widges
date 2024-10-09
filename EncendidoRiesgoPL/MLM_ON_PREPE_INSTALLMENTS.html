@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <!--[if mso]><style>*{font-family:sans-serif!important}</style><![endif]-->
+  <!--[if !mso]><link rel="stylesheet" href="https://ui.mlstatic.com/webfonts/v2.0.0-rc.1/proxima-nova/300-400-600-700.min.css"><![endif]-->
+  <style>
+    /* What it does: Remove spaces around the email design added by some email clients. */
+    /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    body {
+      font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.35;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+      background-color: #fff !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* What it does: Stops email clients resizing small text. */
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* What it does: Centers email on Android 4.4 */
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    /* What it does: forces Samsung Android mail clients to use the entire viewport */
+    #MessageViewBody,
+    #MessageWebViewDiv {
+      width: 100% !important;
+    }
+
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+    table,
+    td {
+      mso-table-lspace: 0 !important;
+      mso-table-rspace: 0 !important;
+      border-collapse: separate !important;
+      /* This is not added on andes, should we remove it? */
+    }
+
+    /* What it does: Fixes webkit padding issue. Mails Components */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: separate !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+
+    table table table {
+      table-layout: auto !important;
+    }
+
+    /* What it does: Uses a better rendering method when resizing images in IE. */
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* What it does: A work-around for email clients meddling in triggered links. */
+    a[x-apple-data-detectors],
+    /* iOS */
+    .unstyle-auto-detected-links a,
+    .aBn,
+    .x-gmail-data-detectors,
+    .x-gmail-data-detectors * {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+    a {
+      text-decoration: none;
+    }
+
+    /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+    .im {
+      color: inherit !important;
+    }
+
+    /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+    .a6S {
+      display: none !important;
+      opacity: 0.01 !important;
+    }
+
+    /* If the above doesn't work, add a .g-img class to any image in question. */
+    img.g-img+div {
+      display: none !important;
+    }
+
+    .button-link {
+      text-decoration: none !important;
+    }
+
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89 */
+    /* Create one of these media queries for each additional viewport size you'd like to fix */
+    /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+      u~div .email-container {
+        min-width: 320px !important;
+      }
+    }
+
+    /* iPhone 6, 6S, 7, 8, and X */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      u~div .email-container {
+        min-width: 375px !important;
+      }
+    }
+
+    /* iPhone 6+, 7+, and 8+ */
+    @media only screen and (min-device-width: 414px) {
+      u~div .email-container {
+        min-width: 414px !important;
+      }
+    }
+
+    @media screen and (min-device-width: 480px) {
+      td[class="show"] {
+        display: block !important;
+        max-height: none !important;
+        mso-hide: none !important;
+      }
+
+      .card-content {
+        border-collapse: separate !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #e5e5e5 !important;
+        border-bottom-color: #bfbfbf !important;
+        border-bottom-width: 2px !important;
+        border-radius: 4px !important;
+        -moz-border-radius: 4px !important;
+        -webkit-border-radius: 4px !important;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .header-content {
+        padding: 8px 12px !important;
+      }
+
+      .header-social {
+        padding: 6px 12px !important;
+      }
+
+      .logo-ml {
+        content: url('https://www.mercadolibre.com/org-img/mkt/email-mkt-assets/davinci/2x/isologoml_codo_a_codo.png') !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+
+      .logo-mp {
+        content: url('https://www.mercadolibre.com/org-img/mkt/email-mkt-assets/davinci/2x/isologomp_codo_a_codo.png') !important;
+        height: 32px !important;
+        width: auto !important;
+      }
+
+      .button,
+      .button-container,
+      .item-button,
+      .item-button-container,
+      .card-button,
+      .card-button-container {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+      }
+
+      .fluid,
+      .hero-image-td-img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .stack-column,
+      .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+
+      .card-info,
+      .categories-body {
+        height: auto !important;
+      }
+    }
+  </style>
+  <style>
+    @media screen and (max-width: 480px) {
+      .footer__column {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+        transition: all .6s ease !important;
+      }
+    }
+
+    .awareness-mp .link {
+      text-decoration: none;
+      color: #009ee3;
+    }
+
+    @media screen and (max-width: 570px) {
+      .awareness-mp {
+        padding: 0 16px !important;
+      }
+
+      .awareness-mp .awareness-mp__header>td {
+        padding: 24px;
+      }
+
+      .awareness-mp .awareness-mp__body {
+        padding: 24px;
+      }
+
+      .awareness-mp .section-mp-body-footer {
+        padding: 24px;
+      }
+
+      .awareness-mp .section-mp-body-footer__button>table {
+        margin: 0 auto !important;
+      }
+    }
+  </style>
+  <!--[if gte mso 9]><xml><o:officedocumentsettings><o:allowpng/><o:pixelsperinch>96</o:pixelsperinch></o:officedocumentsettings></xml><![endif]-->
+</head>
+
+<body width="100%" style="margin: 0; padding: 0; mso-line-height-rule: exactly;">
+  <!--[if mso | IE]> <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5f5f5" align="center"> <tr> <td style="padding: 0px; font-size: 0px;"> <![endif]-->
+  <div style="width: 100%; margin: auto;" class="email-container">
+    <!--[if mso]> <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center"> <tr> <td align="center" style="padding: 0px; font-size: 0px;"> <![endif]-->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+      class="email-container" style="width: 100%; background: #f5f5f5">
+      <tbody>
+        <tr>
+          <td id="templateContent" align="center" style="padding: 0px; font-size: 0px;">
+            <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+              class="awareness-mp awareness-mp__container"
+              style="background-color: #f5f5f5; max-width: 640px; padding: 0 56px;" bgcolor="#f5f5f5">
+              <tbody>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="pre-header">
+                  <tbody>
+                    <tr>
+                      <td class="first-line">{{first_line}}</td>
+                    </tr>
+                    <tr>
+                      <td class="omit-preview">
+                        <div>
+                          &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td valign="middle" align="left" class="logo__td" style="padding-top:24px;padding-bottom:20px">
+                        <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="image" width="124"
+                          height="32" align="left">
+                          <tbody>
+                            <tr>
+                              <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                  href="https://www.mercadopago.com.mx/" title="Ir a Mercado pago"><img
+                                    src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/logo-mercadopago.png"
+                                    width="124" height="32" alt="Ir a Mercado pago" border="0"
+                                    style="display:block;width:100%;margin:auto" class="g-img" /></a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="image" width="100%"
+                  align="left">
+                  <tbody>
+                    <tr>
+                      <td align="center"><img
+                          src="https://http2.mlstatic.com/frontend-assets/credits-cons-email-templates/awareness_header.png"
+                          alt="banner" style="display:block;width:100%;margin:auto" width="100%" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td style="padding-bottom:16px;padding-top:0" />
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                  style="width:100%;background:#fff;overflow:hidden;margin:0 auto;border-radius:6px;border-right-width:1px;border-top-width:1px;border-bottom-width:2px;border-left-width:1px;border-style:solid;border-color:#e5e5e5">
+                  <tbody>
+                    <tr class="awareness-mp__header" businessUnit="mercadolibre" hierarchy="default" feedback="default"
+                      paddingSize="16">
+                      <td class="awareness-mp__header__title" style="padding: 40px;">
+                        <p
+                          style="font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 20px; color: rgba(0,0,0,.9); margin: 0; font-weight: 600; text-align: left;">
+                          {{user.firstName}}, ¡ya puedes pedir un Préstamo Personal!</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td style="padding-bottom:16px;padding-top:0" />
+                    </tr>
+                  </tbody>
+                </table>
+                <section class="awareness-mp__body"
+                  style="border-radius: 6px; border-width: 1px 1px 2px; border-style: solid; border-color: #e5e5e5; padding: 40px; background-color: #fff; border-collapse: separate !important;">
+                  <ul class="awareness-mp__body__item" style="padding: 0; list-style: none; margin: 0;">
+                    <li style="display: flex; align-items: center; margin: 0; padding-top: 16px; padding-bottom: 16px;">
+                      <p
+                        style="padding-left: 16px; margin: 0; font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; text-align: left; color: #000; padding: 0; width: 100%;">
+                        Ahora puedes usar el límite de tu línea de crédito para pedir un Préstamo Personal.</p>
+                    </li>
+                    <li style="display: flex; align-items: center; margin: 0; padding-top: 16px; padding-bottom: 16px;">
+                      <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="image" width="20"
+                        height="20" align="left">
+                        <tbody>
+                          <tr>
+                            <td align="center"><img
+                                src="https://http2.mlstatic.com/frontend-assets/credits-cons-email-templates/awareness_phone.png"
+                                alt="" style="display: block; margin: auto; width: auto !important;" width="20"
+                                height="20" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p
+                        style="padding-left: 16px; margin: 0; width: 95%; font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; text-align: left; color: #000;">
+                        Lo pides 100% on-line, sin burocracia.</p>
+                    </li>
+                    <li style="display: flex; align-items: center; margin: 0; padding-top: 16px; padding-bottom: 16px;">
+                      <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="image" width="20"
+                        height="20" align="left">
+                        <tbody>
+                          <tr>
+                            <td align="center"><img
+                                src="https://http2.mlstatic.com/frontend-assets/credits-cons-email-templates/awareness_clock.png"
+                                alt="" style="display: block; margin: auto; width: auto !important;" width="20"
+                                height="20" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p
+                        style="padding-left: 16px; margin: 0; width: 95%; font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; text-align: left; color: #000;">
+                        Se acredita de manera inmediata en tu cuenta de Mercado Pago.</p>
+                    </li>
+                    <li style="display: flex; align-items: center; margin: 0; padding-top: 16px; padding-bottom: 16px;">
+                      <table role="presentation" cellSpacing="0" cellPadding="0" border="0" class="image" width="20"
+                        height="20" align="left">
+                        <tbody>
+                          <tr>
+                            <td align="center"><img
+                                src="https://http2.mlstatic.com/frontend-assets/credits-cons-email-templates/awareness_like.png"
+                                alt="" style="display: block; margin: auto; width: auto !important;" width="20"
+                                height="20" /></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p
+                        style="padding-left: 16px; margin: 0; width: 95%; font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; text-align: left; color: #000;">
+                        Lo devuelves en hasta {{installments}} mensualidades.</p>
+                    </li>
+                    <li style="display: flex; align-items: center; margin: 0; padding-top: 16px; padding-bottom: 16px;">
+                      <p
+                        style="padding-left: 16px; margin: 0; font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; text-align: left; color: #000; padding: 0; width: 100%;">
+                        Una alternativa para tener dinero en efectivo ¡y usarlo como quieras!</p>
+                    </li>
+                  </ul>
+                </section>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td style="padding-bottom:16px;padding-top:0" />
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                  style="width:100%;background:#fff;overflow:hidden;margin:0 auto;border-radius:6px;border-right-width:1px;border-top-width:1px;border-bottom-width:2px;border-left-width:1px;border-style:solid;border-color:#e5e5e5">
+                  <tbody>
+                    <tr businessUnit="mercadolibre" hierarchy="default" feedback="default" paddingSize="16">
+                      <td class="section-mp-body-footer" style="padding: 24px 40px;">
+                        <p class="section-mp-body-footer__text"
+                          style="color: rgba(0,0,0,.9); font-family: 'Proxima Nova',-apple-system,'Roboto',Arial,sans-serif; font-size: 16px; font-weight: 400; line-height: 1.25; text-align: left; margin-top: 0;">
+                          Simula tu Préstamo Personal desde la sección “Créditos” de Mercado Pago o Mercado Libre.</p>
+                        <div class="section-mp-body-footer__button">
+                          <table role="presentation" cellSpacing="0" cellPadding="0" border="0" align="center"
+                            class="button" style="margin: 0 !important;">
+                            <tbody>
+                              <tr>
+                                <td align="center" style="border-radius:6px;background-color:#009ee3"><a
+                                    href="https://mercadolibre.com.mx/credits/consumer/administrator" target="_blank"
+                                    rel="noopener noreferrer" title="Simular Préstamo Personal"
+                                    style="padding-top:17px;padding-bottom:15px;padding-left:24px;padding-right:24px;font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:600;text-decoration:none;display:block;text-align:center;border-radius:6px;color:#fff;font-size:16px">Simular
+                                    Préstamo Personal</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                  style="width:100%;margin:0 auto">
+                  <tbody>
+                    <tr>
+                      <td valign="middle" align="center" style="padding-top:40px;padding-bottom:40px">
+                        <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                          style="max-width:520px">
+                          <tbody>
+                            <tr>
+                              <td valign="middle" align="left" style="padding-bottom:36px">
+                                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" align="left">
+                                  <tbody>
+                                    <tr>
+                                      <td valign="middle" align="left"><span
+                                          style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:14px;color:#737373">¿Tienes
+                                          alguna duda? </span><a
+                                          style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:14px;color:#009ee3"
+                                          href="https://www.mercadopago.com.mx/ayuda" target="_blank"
+                                          rel="noopener noreferrer">Estamos para ayudarte</a></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <table style="display:none" />
+                                <div
+                                  style="display:inline-block;width:100%;min-width:200px;max-width:300px;vertical-align:top"
+                                  class="footer__column">
+                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                                    align="left">
+                                    <tbody>
+                                      <tr>
+                                        <td style="padding-bottom:8px">
+                                          <p
+                                            style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:14px;color:#737373">
+                                            Envía y recibe dinero desde tu celular</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding-bottom:36px">
+                                          <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                            width="100%" align="left">
+                                            <tbody>
+                                              <tr>
+                                                <td width="107.5">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="107.5" height="32" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://play.google.com/store/apps/details?id=com.mercadopago.wallet&hl=es_MX"
+                                                            title="Google Play"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/badge-google-play@2x.png"
+                                                              width="107.5" height="32" alt="Google Play" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td style="padding-left:8px" align="left">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="98.5" height="32" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://itunes.apple.com/mx/app/mercado-pago/id925436649?mt=8"
+                                                            title="App Store"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/badge-app-store@2x.png"
+                                                              width="98.5" height="32" alt="App Store" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <table style="display:none" />
+                                <div
+                                  style="display:inline-block;width:100%;min-width:200px;max-width:220px;vertical-align:top"
+                                  class="footer__column">
+                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%"
+                                    align="left">
+                                    <tbody>
+                                      <tr>
+                                        <td align="left" style="padding-bottom:8px">
+                                          <p
+                                            style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:14px;color:#737373">
+                                            #QueNadaTeDetenga</p>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding-bottom:36px">
+                                          <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                            align="left">
+                                            <tbody>
+                                              <tr>
+                                                <td style="padding-right:12px" align="left">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="24" height="24" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://www.facebook.com/MercadoPago"
+                                                            title="Facebook"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/icon-facebook@2x.png"
+                                                              width="24" height="24" alt="Facebook" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td style="padding-right:12px" align="left">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="24" height="24" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://twitter.com/mercadopago" title="Twitter"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/icon-twitter@2x.png"
+                                                              width="24" height="24" alt="Twitter" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td style="padding-right:12px" align="left">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="24" height="24" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://www.youtube.com/channel/UC4fvWBwnNs0d97Kwp_6Y64g"
+                                                            title="You Tube"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/icon-youtube@2x.png"
+                                                              width="24" height="24" alt="You Tube" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td style="padding-right:12px" align="left">
+                                                  <table role="presentation" cellSpacing="0" cellPadding="0" border="0"
+                                                    class="image" width="24" height="24" align="left"
+                                                    style="display:block">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td align="center"><a target="_blank" rel="noopener noreferrer"
+                                                            href="https://www.linkedin.com/showcase/10664354"
+                                                            title="Linkedin"><img
+                                                              src="https://mercadolibre.com/org-img/mkt/email-mkt-assets/andes-emails/icon-linkedin@2x.png"
+                                                              width="24" height="24" alt="Linkedin" border="0"
+                                                              style="display:block;width:100%;margin:auto"
+                                                              class="g-img" /></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle" align="left">
+                                <p
+                                  style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#737373">
+                                  Te enviamos este e-mail a {{user.email}} porque elegiste recibir información.</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle" align="left">
+                                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                                  <tbody>
+                                    <tr>
+                                      <td align="left"><a
+                                          style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#009ee3"
+                                          href="{{ unsubscribeUrl }}"
+                                          target="_blank" rel="noopener noreferrer">Administrar preferencias de
+                                          e-mails.</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td align="left">
+                                        <p
+                                          style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#737373">
+                                          Nunca envíes tu clave o datos de tu cuenta por e-mail.</p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle" align="left">
+                                <table role="presentation" cellSpacing="0" cellPadding="0" border="0" width="100%">
+                                  <tbody>
+                                    <tr>
+                                      <td align="left">
+                                        <p
+                                          style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#737373">
+                                          Conoce <a
+                                            style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#009ee3"
+                                            href="https://www.mercadopago.com.mx/privacidad" target="_blank"
+                                            rel="noopener noreferrer">cómo cuidamos tu Privacidad</a> y visita los <a
+                                            style="font-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Arial,sans-serif;font-weight:400;margin:0;padding:0;font-size:12px;color:#009ee3"
+                                            href="https://www.mercadopago.com.mx/ayuda/terminos-y-condiciones_299"
+                                            target="_blank" rel="noopener noreferrer">Términos y Condiciones de Mercado
+                                            Pago</a>.</p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table> <!--[if mso]> </td> </tr> </table> <![endif]-->
+  </div> <!--[if mso | IE]> </td> </tr> </table> <![endif]-->
+</body>
+
+</html>
